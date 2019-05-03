@@ -1,14 +1,13 @@
-const { User } = require("../../src/models");
+const request = require("supertest");
+const { User } = require("../../src/app/models");
+const app = require("../../src/app");
+const truncate = require('../utils/truncate');
 
 describe('Authentication', () => {
-  // it('should receive JWT token when authenticaed with valid credentials', async () => {
-  //   const user = await User.create({
-  //     name: "Eliel",
-  //     email: "eliel@gmail.com",
-  //     password_hash: "123123123"
-  //   });
-  //   expect(user.email).toBe('eliel@gmail.com');
-  // });
+  beforeEach( async () => {
+    await truncate();
+  });
+
 
   it('should authenticate with valid credentials', async () => {
     const user = await User.create({
