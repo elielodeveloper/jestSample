@@ -2,6 +2,7 @@ module.exports = {
   host: '127.0.0.1',
   username: 'postgres',
   database: 'nodeauth',
+  password: '',
   dialect: 'postgres',
   operatorAliases: false,
   logging: false,
